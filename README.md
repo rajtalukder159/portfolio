@@ -25,9 +25,5 @@ This portfolio showcases:
 - 🌙 Dark mode theme
 - 📱 Mobile responsive
 - ⚙️ Built using **HTML5 + CSS3**
-- 🌐 Hosted on GitHub Pages
-
----
-
-## 📁 Project Structure
+- 🌐 Hosted on GitHub Page
 
