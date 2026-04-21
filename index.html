@@ -1,67 +1,480 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="assets/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shimon (Raj) Talukder – cybersecurity enthusiast focusing on Red Teaming, DFIR, and networking." />
+  <title>Shimon Talukder Raj | Cybersecurity Portfolio</title>
+
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/responsive.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+<header class="site-header" data-aos="fade-down">
+  <div class="nav-container">
+    <a href="#home" class="logo" aria-label="Raj Talukder">Raj Talukder</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="#home" class="nav-link home-link">Home</a>
+      <a href="#about" class="nav-link about-link">About</a>
+      <a href="#cert" class="nav-link cert-link">Certificates</a>
+      <a href="#work" class="nav-link work-link">Work</a>
+      <a href="#off-screen" class="nav-link offscreen-link">Off-Screen</a>
+      <a href="#contact" class="nav-link contact-link">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+  </div>
+</header>
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#certificates">Certificates</a></li>
-                <li><a href="#work">Work</a></li>
-                <li><a href="#off-screen">Off-Screen</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="home">
-        <h1>Welcome to My Portfolio</h1>
-    </section>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Here is some information about me.</p>
-    </section>
-
-    <section id="certificates">
-        <h2>Certificates</h2>
-        <div class="marquee">
-            <p>Your certificate listings go here...</p>
+<main>
+  <!-- Hero -->
+  <section id="home" class="hero-section">
+    <div class="hero-bg-glow"></div>
+    <div class="hero-content">
+      <div class="hero-avatar" data-aos="fade-right">
+        <img src="assets/pictures/about-photo.jpg" alt="Portrait of Shimon Talukder Raj">
+      </div>
+      <div class="hero-text" data-aos="fade-left">
+        <h1 class="hero-animated-text text"></h1>
+        <p class="subtitle">
+          College student pursuing certificates and building my skills. I have not joined a university yet,
+          and I do not have job experience. I dream of creating a great portfolio and, in the future,
+          launching my own product, an agency, and a YouTube platform.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="assets/Shimon talukder raj _ cv.pdf" target="_blank" rel="noopener">Download Resume</a>
+          <a class="btn ghost" href="#contact">Let’s Collaborate</a>
         </div>
-    </section>
-
-    <section id="work">
-        <h2>Work</h2>
-        <p>Content about my work experience remains unchanged.</p>
-    </section>
-
-    <section id="off-screen" class="off-screen">
-        <h2>Off-Screen</h2>
-        <div>
-            <h3>Instruments</h3>
-            <p>Guitar, Tabla, Harmonium, Singing</p>
+        <div class="hero-social">
+          <a href="https://github.com/rajtalukder159" target="_blank" rel="noopener"><img src="https://icones.pro/wp-content/uploads/2021/06/icone-github-violet.png" alt="GitHub"></a>
+          <a href="https://www.linkedin.com/in/shimon-talukder-raj-646860295/" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/512px-LinkedIn_logo_initials.png" alt="LinkedIn"></a>
+          <a href="https://www.instagram.com/rajtalukder_159/" target="_blank" rel="noopener"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968776.png" alt="Instagram"></a>
         </div>
-        <div>
-            <h3>Reading List</h3>
-            <p>Cybersecurity books, 48 Laws of Power, Zero to One, Atomic Habits, Building a StoryBrand, The Psychology of Money</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section about-section">
+    <h2 data-aos="fade-right">About Me</h2>
+    <div data-aos="fade-up" class="about-copy">
+      <p><b>Aspiring Cybersecurity Specialist | Creative Coder</b></p>
+      <p>I'm Shimon Talukder Raj, an HSC Science student (Batch 2026) focused on Red Teaming, DFIR, and threat detection. I’ve completed:</p>
+      <ul>
+        <li>Cyber Security & Ethical Hacking Career Track Program (Ostad)</li>
+        <li>Cybersecurity Career Path (Microsoft & LinkedIn)</li>
+        <li>CCNA 200-301 (Simplilearn)</li>
+        <li>Programming for Cybersecurity (Let's Defend)</li>
+      </ul>
+      <p>Hands-on with 20+ security tools: Nessus, Nmap, SQLMap, Metasploit, Burp Suite, Wireshark, Volatility, OWASP ZAP, and more.</p>
+      <p>Microsoft Learn ID: <a href="https://learn.microsoft.com/en-us/users/shimontalukder-6374/" target="_blank" rel="noopener">shimontalukder-6374</a></p>
+      <p><b>Goal:</b> Become a versatile cybersecurity professional across Red & Blue Teams and contribute to the security community.</p>
+    </div>
+
+    <h3>My Skills</h3>
+    <div class="skills-cards">
+      <div class="skill-card" id="languages-card">
+        <h4>Languages & CS</h4>
+        <ul>
+          <li class="fade-another">Powershell</li>
+          <li class="fade-another">Bash</li>
+          <li class="fade-another">GO</li>
+          <li class="fade-another">Assembly</li>
+          <li class="fade-another">DSA with javascript</li>
+          <li class="fade-another">Python</li>
+          <li class="fade-another">SQL</li>
+          <li class="fade-another">Data analysis & claning</li>
+          <li class="fade-another">C</li>
+          <li class="fade-another">Git</li>
+          <li class="fade-another">Docker</li>
+        </ul>
+        <p class="skill-note">
+          Coursework focuses on security fundamentals.
+        </p>
+      </div>
+
+      <div class="skill-card">
+        <h4>Security Tools</h4>
+        <ul>
+          <li class="fade-another">Metasploit</li>
+          <li class="fade-another">Burp Suite</li>
+          <li class="fade-another">OWASP ZAP</li>
+          <li class="fade-another">SQLMap</li>
+          <li class="fade-another">DIE Tool</li>
+          <li class="fade-another">Nessus</li>
+          <li class="fade-another">OpenVAS</li>
+          <li class="fade-another">Wireshark</li>
+          <li class="fade-another">Recon-ng</li>
+          <li class="fade-another">Mobexler</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h4>Cloud Recon</h4>
+        <ul>
+          <li class="fade-third">LazyS3</li>
+          <li class="fade-third">Shodan</li>
+          <li class="fade-third">Censys</li>
+          <li class="fade-third">CyberChef</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="cert" class="section cert-section">
+    <h2 class="scroll-card animate-on-scroll">My Certificates</h2>
+    <div class="cert-marquee">
+      <div class="cert-track">
+        <div class="cert-card zoom-scroll-fade">
+          <img src="https://ostad.sgp1.digitaloceanspaces.com/certificate-share/a27041-shimon-talukder-raj.png" alt="certificate">
+          <h4>Cybersecurity and ethical hacking career track program</h4>
+          <p>Ostad</p>
+          <a href="https://ostad.app/share/certificate/a27041-shimon-talukder-raj" target="_blank">Verify Credential</a>
         </div>
-    </section>
+        <div class="cert-card zoom-scroll-fade">
+          <img src="https://ostad.sgp1.digitaloceanspaces.com/certificate-share/c23451-shimon-talukder-raj.png" alt="certificate">
+          <h4>Basics of JS</h4>
+          <p>Ostad</p>
+          <a href="https://ostad.app/share/certificate/c23451-shimon-talukder-raj" target="_blank">Verify Credential</a>
+        </div>
+        <div class="cert-card zoom-scroll-fade">
+          <img src="assets/pictures/certificate-1-img.jpg" alt="certificate">
+          <h4>Fundamentals of AI</h4>
+          <p>Microsoft</p>
+          <a href="assets/pictures/certificate-1.pdf" target="_blank">Verify Credential</a>
+        </div>
+        <div class="cert-card zoom-scroll-fade">
+          <img src="https://certificates.simplicdn.net/share/thumb_4781749_1705146409.png" alt="certificate">
+          <h4>SQL Injection</h4>
+          <p>Simplilearn</p>
+          <a href="https://simpli-web.app.link/e/S3Nav48o9Ub" target="_blank">Verify Credential</a>
+        </div>
+        <div class="cert-card zoom-scroll-fade">
+          <img src="https://certificates.simplicdn.net/share/thumb_4780413_1705077552.png" alt="certificate">
+          <h4>Introduction to Cryptography</h4>
+          <p>Simplilearn</p>
+          <a href="https://simpli-web.app.link/e/5yWwgbgp9Ub" target="_blank">Verify Credential</a>
+        </div>
+        <div class="cert-card zoom-scroll-fade">
+          <img src="https://lms10.s3.ap-southeast-1.amazonaws.com/skillup/certificates/643792c61516a.jpg?t=1741604431" alt="certificate">
+          <h4>Presentation & Public Speaking</h4>
+          <p>10 Minute School</p>
+          <a href="https://10minuteschool.com/certificate/643792c61516a/" target="_blank">Verify Credential</a>
+        </div>
+        <div class="cert-card zoom-scroll-fade">
+          <img src="https://lms10.s3.ap-southeast-1.amazonaws.com/skillup/certificates/67cec609d1f0a.jpg?t=1741604365" alt="certificate">
+          <h4>Microsoft Office Specialist Certificate</h4>
+          <p>10 Minute School</p>
+          <a href="https://10minuteschool.com/certificate/67cec609d1f0a/" target="_blank">Verify Credential</a>
+        </div>
+        <div class="cert-card zoom-scroll-fade">
+          <img src="https://ostad.sgp1.digitaloceanspaces.com/certificate-share/a27041-shimon-talukder-raj.png" alt="certificate">
+          <h4>Cybersecurity and ethical hacking career track program</h4>
+          <p>Ostad</p>
+          <a href="https://ostad.app/share/certificate/a27041-shimon-talukder-raj" target="_blank">Verify Credential</a>
+        </div>
+        <div class="cert-card zoom-scroll-fade">
+          <img src="https://ostad.sgp1.digitaloceanspaces.com/certificate-share/c23451-shimon-talukder-raj.png" alt="certificate">
+          <h4>Basics of JS</h4>
+          <p>Ostad</p>
+          <a href="https://ostad.app/share/certificate/c23451-shimon-talukder-raj" target="_blank">Verify Credential</a>
+        </div>
+        <div class="cert-card zoom-scroll-fade">
+          <img src="assets/pictures/certificate-1-img.jpg" alt="certificate">
+          <h4>Fundamentals of AI</h4>
+          <p>Microsoft</p>
+          <a href="assets/pictures/certificate-1.pdf" target="_blank">Verify Credential</a>
+        </div>
+        <div class="cert-card zoom-scroll-fade">
+          <img src="https://certificates.simplicdn.net/share/thumb_4781749_1705146409.png" alt="certificate">
+          <h4>SQL Injection</h4>
+          <p>Simplilearn</p>
+          <a href="https://simpli-web.app.link/e/S3Nav48o9Ub" target="_blank">Verify Credential</a>
+        </div>
+        <div class="cert-card zoom-scroll-fade">
+          <img src="https://certificates.simplicdn.net/share/thumb_4780413_1705077552.png" alt="certificate">
+          <h4>Introduction to Cryptography</h4>
+          <p>Simplilearn</p>
+          <a href="https://simpli-web.app.link/e/5yWwgbgp9Ub" target="_blank">Verify Credential</a>
+        </div>
+        <div class="cert-card zoom-scroll-fade">
+          <img src="https://lms10.s3.ap-southeast-1.amazonaws.com/skillup/certificates/643792c61516a.jpg?t=1741604431" alt="certificate">
+          <h4>Presentation & Public Speaking</h4>
+          <p>10 Minute School</p>
+          <a href="https://10minuteschool.com/certificate/643792c61516a/" target="_blank">Verify Credential</a>
+        </div>
+        <div class="cert-card zoom-scroll-fade">
+          <img src="https://lms10.s3.ap-southeast-1.amazonaws.com/skillup/certificates/67cec609d1f0a.jpg?t=1741604365" alt="certificate">
+          <h4>Microsoft Office Specialist Certificate</h4>
+          <p>10 Minute School</p>
+          <a href="https://10minuteschool.com/certificate/67cec609d1f0a/" target="_blank">Verify Credential</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Get in touch with me!</p>
-    </section>
+  <!-- Work -->
+  <section id="work" class="section work-section">
+    <h2 class="scroll-card animate-on-scroll">Featured Projects</h2>
+    <div class="work-cards">
+      <div class="work-card fade-zoom-in-once">
+        <h4>CyberSecurity Project</h4>
+        <p>A structured cybersecurity learning portfolio demonstrating hands-on labs and practical skills across multiple domains:</p>
+        <ul>
+          <li style="margin-bottom: 10px;">
+            Project Structure: From Lab Setup → Reconnaissance → Assessment → Exploitation → Web & System Security → Cloud & Forensics → Governance & Compliance
+          </li>
+          <li style="margin-bottom: 10px;">
+            Tools & Technologies: Metasploit, Burp Suite, OWASP ZAP, SQLMap, LazyS3, VirusTotal, DIE Tool, Wireshark, OpenVAS, Nessus
+          </li>
+          <li>
+            Skills Demonstrated: Vulnerability Assessment, Exploitation, Web & Network Attacks, Malware Analysis, Cloud Enumeration, Active Directory, Security Audit Lifecycle
+          </li>
+        </ul>
+        <a href="https://github.com/rajtalukder159/CyberSecurity-Project" style="text-decoration: none; color: #4e7ccd;">View Projects</a>
+      </div>
 
-    <footer>
-        <p>© 2026 My Portfolio</p>
-    </footer>
+      <div class="work-card fade-zoom-in-once">
+        <h4>Docker-based Debian Lab Projects</h4>
+        <p>A two-part cybersecurity lab project using Docker and Debian to simulate practical Red Team scenarios:</p>
+        <ul>
+          <li style="margin-bottom: 10px;">
+            Purpose: Practice containerized environments, learn web server deployment, build Red Team & penetration testing skills.
+          </li>
+          <li style="margin-bottom: 10px;">
+            Part 1 — Building the Target Server: <br> topics: Docker intro, pulling Debian image, running containers, Apache setup, port mapping, ServerName fixes (with screenshots)
+          </li>
+          <li>
+            Part 2 — Enumeration & Security Testing: <br> Topics: Attacker tools overview (Kali Linux, Nmap, Nikto), scanning & enumeration methodology, findings, lessons learned, best practice notes
+          </li>
+        </ul>
+        <a href="https://github.com/rajtalukder159/docker-debian-lab" style="text-decoration: none; color: #4e7ccd;">View Projects</a>
+      </div>
 
+      <div class="work-card fade-zoom-in-once">
+        <h4>DSA-Practice-GeeksforGeeks</h4>
+        <p>Collection of Data Structures & Algorithms (DSA) problems and solutions for coding practice and algorithm mastery:</p>
+        <ul>
+          <li style="margin-bottom: 7px;">
+            Topics Covered: Arrays, Strings, Linked Lists, Stacks & Queues, Trees & Binary Trees, Binary Search, Sorting Algorithms, Recursion & Backtracking, Graphs, Dynamic Programming (DP)
+          </li>
+          <li>Tech Stack: Python, C, JavaScript </li>
+        </ul>
+        <a href="https://github.com/rajtalukder159/DSA-Practice-GeeksforGeeks" style="text-decoration: none; color: #4e7ccd;">View Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Off-Screen -->
+  <section id="off-screen" class="section offscreen-section">
+    <h2 class="scroll-card animate-on-scroll">Off-Screen</h2>
+    <div class="offscreen-grid">
+      <div class="offscreen-card fade-zoom-in-once">
+        <h3>Instruments & Music</h3>
+        <p>Many instruments — Guitar, Tabla, Harmonium, and sometimes I sing. Not a professional — just someone who loves it.</p>
+      </div>
+      <div class="offscreen-card fade-zoom-in-once">
+        <h3>Reading & Curiosity</h3>
+        <p>Cybersecurity books, 48 Laws of Power, Zero to One, Atomic Habits, Building a StoryBrand, The Psychology of Money, and more. Learning is the hobby; reading is just how it looks.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section contact-section">
+    <h2 class="scroll-card animate-on-scroll">Get In Touch</h2>
+    <div class="contact-cards">
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        <p><strong>Email:</strong> <a href="mailto:rajtalukder2006@gmail.com" class="letter-fade">rajtalukder2006@gmail.com</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/shimon-talukder-raj-646860295/" class="letter-fade" target="_blank" rel="noopener">linkedin.com/in/shimon-talukder-raj-646860295</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/rajtalukder159" class="letter-fade" target="_blank" rel="noopener">github.com/rajtalukder159</a></p>
+        <p><strong>Instagram:</strong> <a href="https://www.instagram.com/rajtalukder_159/" class="letter-fade" target="_blank" rel="noopener">instagram.com/rajtalukder_159</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer scroll-card animate-on-scroll">
+  <div class="footer-content">
+    <div class="logo-footer"><a href="#home">Raj Talukder</a></div>
+    <div class="copy">&copy; 2026 Shimon Talukder Raj. All rights reserved.</div>
+    <div class="footer-social">
+      <a href="https://github.com/rajtalukder159" target="_blank" rel="noopener"><img src="https://icones.pro/wp-content/uploads/2021/06/icone-github-violet.png" alt="GitHub"></a>
+      <a href="https://www.linkedin.com/in/shimon-talukder-raj-646860295/" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/512px-LinkedIn_logo_initials.png" alt="LinkedIn"></a>
+      <a href="https://www.instagram.com/rajtalukder_159/" target="_blank" rel="noopener"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968776.png" alt="Instagram"></a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    /* Hero text scramble */
+    class TextScramble {
+      constructor(el) { this.el = el; this.chars = '!<>-_\/[]{}—=+*^?#________'; this.update = this.update.bind(this); }
+      setText(newText) {
+        const oldText = this.el?.innerText || '';
+        const length = Math.max(oldText.length, newText.length);
+        const promise = new Promise((resolve) => (this.resolve = resolve));
+        this.queue = [];
+        for (let i = 0; i < length; i++) {
+          const from = oldText[i] || '';
+          const to   = newText[i] || '';
+          const start = Math.floor(Math.random() * 40);
+          const end   = start + Math.floor(Math.random() * 40);
+          this.queue.push({ from, to, start, end });
+        }
+        cancelAnimationFrame(this.frameRequest);
+        this.frame = 0;
+        this.update();
+        return promise;
+      }
+      update() {
+        let output = '';
+        let complete = 0;
+        for (let i = 0, n = this.queue.length; i < n; i++) {
+          let { from, to, start, end, char } = this.queue[i];
+          if (this.frame >= end) { complete++; output += to; }
+          else if (this.frame >= start) {
+            if (!char || Math.random() < 0.28) { char = this.randomChar(); this.queue[i].char = char; }
+            output += `<span class="dud">${char}</span>`;
+          } else { output += from; }
+        }
+        if (this.el) this.el.innerHTML = output;
+        if (complete === this.queue.length) { this.resolve?.(); }
+        else { this.frameRequest = requestAnimationFrame(this.update); this.frame++; }
+      }
+      randomChar() { return this.chars[Math.floor(Math.random() * this.chars.length)]; }
+    }
+
+    if (typeof AOS !== 'undefined') AOS.init();
+
+    const textEl = document.querySelector('.text');
+    if (textEl) {
+      const phrases = ['Shimon Talukder Raj', 'Cybersecurity Enthusiast', 'Dreaming Builder'];
+      const fx = new TextScramble(textEl);
+      let counter = 0;
+      (function next() {
+        fx.setText(phrases[counter]).then(() => setTimeout(next, 3500));
+        counter = (counter + 1) % phrases.length;
+      })();
+    }
+
+    /* Intersection-based reveals */
+    const observeFade = (selector, threshold = 0.1) => {
+      const items = document.querySelectorAll(selector);
+      if (!items.length) return;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => entry.target.classList.add('visible'), index * 150);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold });
+      items.forEach((item) => observer.observe(item));
+    };
+    observeFade('.fade-item');
+    observeFade('.fade-another');
+    observeFade('.fade-third');
+
+    const scrollCards = document.querySelectorAll('.animate-on-scroll');
+    if (scrollCards.length) {
+      const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            scrollObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      scrollCards.forEach((card) => scrollObserver.observe(card));
+    }
+
+    function prepareLetterFade(className = 'letter-fade') {
+      const elements = document.querySelectorAll(`.${className}`);
+      if (!elements.length) return;
+      elements.forEach((el) => {
+        const text = el.textContent || '';
+        el.innerHTML = '';
+        [...text].forEach((char) => {
+          const span = document.createElement('span');
+          span.textContent = char;
+          el.appendChild(span);
+        });
+      });
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const spans = entry.target.querySelectorAll('span');
+            spans.forEach((span, i) => setTimeout(() => span.classList.add('visible'), i * 20));
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.4 });
+      elements.forEach((el) => observer.observe(el));
+    }
+    prepareLetterFade();
+
+    const zoomFadeItems = document.querySelectorAll('.zoom-scroll-fade');
+    if (zoomFadeItems.length) {
+      const onceObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+      }, { threshold: 0.3 });
+      zoomFadeItems.forEach((item) => onceObserver.observe(item));
+    }
+
+    const fadeZoomOnceItems = document.querySelectorAll('.fade-zoom-in-once');
+    if (fadeZoomOnceItems.length) {
+      const fadeZoomOnceObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+      }, { threshold: 0.3 });
+      fadeZoomOnceItems.forEach((item) => fadeZoomOnceObserver.observe(item));
+    }
+
+    /* Smooth scroll */
+    const scrollMap = { 'home-link': '#home', 'about-link': '#about', 'cert-link': '#cert', 'work-link': '#work', 'offscreen-link': '#off-screen', 'contact-link': '#contact' };
+    document.querySelectorAll('.nav-link').forEach((link) => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        for (let key in scrollMap) {
+          if (this.classList.contains(key)) {
+            const target = document.querySelector(scrollMap[key]);
+            if (target) target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+
+    /* Mobile nav toggle */
+    const navToggle = document.querySelector('.nav-toggle');
+    const mainNav  = document.querySelector('.main-nav');
+    if (navToggle && mainNav) {
+      navToggle.addEventListener('click', () => mainNav.classList.toggle('show'));
+    }
+
+    /* Data-driven Languages & CS */
+    const coreSkills = [
+      'Python',
+      'SQL',
+      'Data analysis',
+      'Data cleaning (Python + SQL)',
+      'Command line',
+      'DSA with JavaScript'
+    ];
+    const coreList = document.getElementById('languages-list');
+    if (coreList) {
+      coreList.innerHTML = '';
+      coreSkills.forEach((txt) => {
+        const li = document.createElement('li');
+        li.textContent = txt;
+        li.classList.add('fade-item');
+        coreList.appendChild(li);
+      });
+    }
+  });
+</script>
 </body>
 </html>
