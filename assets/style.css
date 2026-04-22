@@ -130,31 +130,49 @@ a:hover, a:focus { color: #b4cbff; }
   gap: 60px;
   padding: 0 26px;
 }
+/* Hero avatar — best default: crisp circle + controlled crop */
 .hero-avatar{
-  width: 180px;
-  height: 180px;
+  flex-shrink: 0;
+  width: 190px;
+  height: 190px;
   border-radius: 50%;
   overflow: hidden;
   background: #111726;
   border: 3px solid rgba(255,255,255,0.12);
-  box-shadow: 0 16px 50px rgba(0,0,0,0.45), 0 0 0 8px rgba(99,179,255,0.08);
-  display: grid;
-  place-items: center;
+  box-shadow:
+    0 16px 50px rgba(0,0,0,0.45),
+    0 0 0 8px rgba(99,179,255,0.08);
+  position: relative;
 }
-.hero-avatar:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.55), 0 0 0 10px rgba(143,123,255,0.15);
+
+/* subtle glow ring */
+.hero-avatar::after{
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99,179,255,0.22), transparent 60%);
+  filter: blur(10px);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .hero-avatar img{
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
-  object-fit: contain;      /* important: no ugly crop */
-  object-position: center;
-  padding: 10px;            /* breathing space inside circle */
-  border-radius: 50%;
+  object-fit: cover;          /* looks most premium */
+  object-position: 50% 20%;   /* lifts crop to focus face */
+  transform: scale(1.08);     /* slight zoom = less “empty circle” */
+  display: block;
 }
 
+/* Hover effect */
+.hero-avatar:hover{
+  transform: translateY(-3px);
+  transition: transform 0.25s ease;
+}
 .hero-text { flex: 1; }
 .hero-text h1 { font-size: 2.6rem; color: #fff; margin: 0 0 12px; font-weight: 800; letter-spacing: 0.01em; }
 .subtitle { font-size: 1.08rem; color: var(--muted); margin: 0 0 22px; line-height: 1.6; max-width: 700px; }
