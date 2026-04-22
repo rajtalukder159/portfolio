@@ -132,8 +132,8 @@ a:hover, a:focus { color: #b4cbff; }
 }
 
 .hero-avatar {
-  width: 260px;      /* choose size you want */
-  height: 260px;
+  width: 180px;      /* choose size you want */
+  height: 180px;
   border-radius: 50%;
   overflow: hidden;
 }
