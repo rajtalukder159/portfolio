@@ -1,3 +1,4 @@
+![image alt](https://github.com/rajtalukder159/portfolio/blob/e2878d03dc77fd1c383e04199470bbc759346adf/ChatGPT%20Image%20Sep%2012%2C%202026%2C%2012_37_14%20PM.png)
 # 🌐 Raj Talukder – Personal Portfolio Website
 
 ![Portfolio](https://img.shields.io/badge/Status-Live-brightgreen?style=flat-square)
