@@ -815,5 +815,124 @@
         }
       });
     </script>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const marquee = document.querySelector(".cert-marquee");
+  const track = document.querySelector(".cert-track");
+  const cards = Array.from(track.querySelectorAll(".cert-card"));
+
+  const prevButton = document.getElementById("certPrev");
+  const nextButton = document.getElementById("certNext");
+
+  if (!marquee || !track || cards.length === 0) return;
+
+  let position = 0;
+  let speed = 0.35;
+  let paused = false;
+
+  const gap = 24;
+
+  /*
+    Clone the cards automatically.
+    You only need to write each certificate once.
+  */
+
+  cards.forEach(card => {
+    const clone = card.cloneNode(true);
+    clone.classList.add("cert-clone");
+    track.appendChild(clone);
+  });
+
+  const originalWidth = cards.reduce((total, card) => {
+    return total + card.offsetWidth + gap;
+  }, 0);
+
+  function animate() {
+
+    if (!paused) {
+      position -= speed;
+
+      /*
+        Once the first set has completely passed,
+        move back by exactly one set width.
+      */
+
+      if (Math.abs(position) >= originalWidth) {
+        position += originalWidth;
+      }
+
+      track.style.transform = `translate3d(${position}px, 0, 0)`;
+    }
+
+    updateActiveCard();
+
+    requestAnimationFrame(animate);
+  }
+
+  function updateActiveCard() {
+
+    const viewportCenter =
+      marquee.getBoundingClientRect().left +
+      marquee.getBoundingClientRect().width / 2;
+
+    cards.forEach(card => {
+
+      const rect = card.getBoundingClientRect();
+
+      const cardCenter =
+        rect.left + rect.width / 2;
+
+      const distance =
+        Math.abs(viewportCenter - cardCenter);
+
+      if (distance < rect.width * 0.45) {
+        card.classList.add("cert-active");
+      } else {
+        card.classList.remove("cert-active");
+      }
+    });
+  }
+
+  /* Pause when mouse is over the certificate section */
+
+  marquee.addEventListener("mouseenter", () => {
+    paused = true;
+  });
+
+  marquee.addEventListener("mouseleave", () => {
+    paused = false;
+  });
+
+  /* Previous */
+
+  prevButton.addEventListener("click", () => {
+    position += cards[0].offsetWidth + gap;
+
+    if (position > 0) {
+      position -= originalWidth;
+    }
+
+    track.style.transform =
+      `translate3d(${position}px, 0, 0)`;
+  });
+
+  /* Next */
+
+  nextButton.addEventListener("click", () => {
+    position -= cards[0].offsetWidth + gap;
+
+    if (Math.abs(position) >= originalWidth) {
+      position += originalWidth;
+    }
+
+    track.style.transform =
+      `translate3d(${position}px, 0, 0)`;
+  });
+
+  animate();
+
+});
+</script>
   </body>
 </html>
