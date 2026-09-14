@@ -326,60 +326,63 @@ a:hover, a:focus { color: #b4cbff; }
   line-height: 1.45;
 }
 
-/* ==============================
-   CERTIFICATES
-   ============================== */
+/* ================================
+   CERTIFICATE CAROUSEL
+================================ */
 
-.cert-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
+.cert-marquee {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 12px 4px 65px;
 }
 
+.cert-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.cert-group {
+  display: flex;
+  gap: 18px;
+  flex-shrink: 0;
+}
+
+/* Certificate cards */
 .cert-card {
   flex: 0 0 360px;
   min-width: 360px;
   padding: 16px 14px;
   border-radius: 18px;
-
-  background: rgba(28, 39, 70, 0.88);
-  border: var(--glass-border);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.26);
-
-  transition:
-    transform 0.45s ease,
-    box-shadow 0.45s ease,
-    opacity 0.45s ease;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Nice lift effect */
 .cert-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 18px 40px rgba(99, 179, 255, 0.22);
+  transform: translateY(-7px);
+  box-shadow: 0 16px 40px rgba(99, 179, 255, 0.22);
 }
 
+/* Certificate image */
 .cert-card img {
   width: 100%;
   height: 210px;
-
-  /* Shows the complete certificate */
   object-fit: contain;
-
-  background: #ffffff;
   border-radius: 14px;
-  margin-bottom: 12px;
-
+  margin-bottom: 10px;
   display: block;
+  background: rgba(255,255,255,0.03);
 }
 
 .cert-card h4 {
   font-size: 1.08rem;
   line-height: 1.25;
-  margin-bottom: 10px;
 }
 
 .cert-card p {
   font-size: 0.98rem;
-  margin-bottom: 14px;
 }
 
 .cert-card a {
@@ -388,126 +391,54 @@ a:hover, a:focus { color: #b4cbff; }
   text-decoration: underline;
 }
 
-
-/* ==============================
-   CERTIFICATE MARQUEE
-   ============================== */
-
-.cert-marquee {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  padding: 18px 4px 25px;
-}
-
-.cert-track {
-  display: flex;
-  gap: 18px;
-  width: max-content;
-
-  /* Slow continuous movement */
-  animation: cert-scroll 55s linear infinite;
-
-  will-change: transform;
-}
-
-.cert-marquee:hover .cert-track {
-  animation-play-state: paused;
-}
-
-
-/* ==============================
-   SMOOTH CERTIFICATE MOVEMENT
-   ============================== */
-
-@keyframes cert-scroll {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-
-/* ==============================
-   ACTIVE / CENTER CARD
-   ============================== */
-
-.cert-card.cert-active {
-  transform: translateY(-10px) scale(1.02);
-  opacity: 1;
-
-  box-shadow:
-    0 20px 45px rgba(0, 0, 0, 0.32),
-    0 0 24px rgba(99, 179, 255, 0.12);
-}
-
-
-/* ==============================
-   BOTTOM-RIGHT CONTROLS
-   ============================== */
+/* ================================
+   LEFT / RIGHT BUTTONS
+================================ */
 
 .cert-controls {
+  position: absolute;
+  right: 18px;
+  bottom: 15px;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-
   gap: 10px;
-  padding: 0 18px 12px;
+  z-index: 20;
 }
 
 .cert-controls button {
-  width: 44px;
-  height: 44px;
-
-  border: var(--glass-border);
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(99,179,255,0.35);
   border-radius: 50%;
-
-  background: rgba(28, 39, 70, 0.9);
+  background: rgba(20, 30, 55, 0.9);
   color: var(--accent);
-
-  font-size: 1.25rem;
-  font-weight: 700;
-
+  font-size: 22px;
+  font-weight: bold;
   cursor: pointer;
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+  transition: 0.25s ease;
 }
 
 .cert-controls button:hover {
-  transform: translateY(-4px);
-
-  box-shadow:
-    0 10px 25px rgba(99, 179, 255, 0.22);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(99,179,255,0.25);
 }
 
+.cert-controls button:active {
+  transform: scale(0.92);
+}
 
-/* ==============================
-   MOBILE
-   ============================== */
-
+/* Mobile */
 @media (max-width: 600px) {
-
   .cert-card {
-    flex: 0 0 300px;
-    min-width: 300px;
+    flex: 0 0 290px;
+    min-width: 290px;
   }
 
   .cert-card img {
     height: 180px;
   }
 
-  .cert-track {
-    gap: 14px;
-    animation-duration: 65s;
-  }
-
   .cert-controls {
-    padding-right: 10px;
+    right: 12px;
   }
 }
 /* ==============================
