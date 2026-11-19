@@ -125,14 +125,14 @@ a:hover, a:focus { color: #b4cbff; }
   z-index: 1;
   max-width: var(--max);
   margin: auto;
-  display: flex;
-  align-items: center;
-  gap: 60px;
+  min-height: 190px;
   padding: 0 26px;
 }
 /* Hero avatar — best default: crisp circle + controlled crop */
 .hero-avatar{
-  flex-shrink: 0;
+  position: absolute;
+  left: 26px;
+  top: 0;
   width: 190px;
   height: 190px;
   border-radius: 50%;
@@ -142,7 +142,6 @@ a:hover, a:focus { color: #b4cbff; }
   box-shadow:
     0 16px 50px rgba(0,0,0,0.45),
     0 0 0 8px rgba(99,179,255,0.08);
-  position: relative;
 }
 
 /* subtle glow ring */
@@ -174,7 +173,9 @@ a:hover, a:focus { color: #b4cbff; }
   transition: transform 0.25s ease;
 }
 .hero-text {
-  flex: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 18px;
   text-align: center;
 }
 .hero-text h1 { font-size: 2.6rem; color: #fff; margin: 0 0 12px; font-weight: 800; letter-spacing: 0.01em; }
@@ -690,6 +691,38 @@ a:hover, a:focus { color: #b4cbff; }
   stroke: none;
 }
 
+.contact-social a {
+  width: 38px;
+  height: 38px;
+  color: #8b929e;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  transition: color 0.18s ease, transform 0.18s ease, filter 0.18s ease;
+}
+
+.contact-social svg {
+  width: 34px;
+  height: 34px;
+}
+
+.contact-social a[href*="linkedin.com"] svg rect {
+  fill: currentColor;
+  stroke: none;
+}
+
+.contact-social a[href*="linkedin.com"] svg path {
+  stroke: #f5f7fb;
+}
+
+.contact-social a:hover,
+.contact-social a:focus-visible {
+  color: #c8ced8;
+  transform: translateY(-2px) scale(1.06);
+  filter: drop-shadow(0 0 8px rgba(99, 179, 255, 0.55));
+  box-shadow: none;
+}
+
 .site-footer {
   margin-top: 60px;
   padding: 28px 24px 22px;
@@ -754,8 +787,23 @@ a:hover, a:focus { color: #b4cbff; }
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .hero-content { flex-direction: column; gap: 32px; text-align: center; }
-  .hero-text { width: 100%; }
+  .hero-content {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+    gap: 32px;
+    text-align: center;
+  }
+  .hero-avatar {
+    position: relative;
+    left: auto;
+    top: auto;
+  }
+  .hero-text {
+    width: 100%;
+    max-width: none;
+    padding-top: 0;
+  }
   .hero-actions { justify-content: center; }
   .hero-social { justify-content: center; }
   .nav-container { padding: 12px 18px; }
