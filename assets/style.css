@@ -607,6 +607,95 @@ a:hover, a:focus { color: #b4cbff; }
 .contact-info h3 { margin-top: 0; color: #c6d6ff; }
 .contact-info p { margin: 8px 0; color: var(--text); }
 
+.contact-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.contact-social a,
+.footer-social a {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  color: var(--accent);
+  border: 1px solid rgba(99, 179, 255, 0.28);
+  border-radius: 50%;
+  background: rgba(15, 22, 41, 0.45);
+  transition: transform 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.contact-social a:hover,
+.contact-social a:focus-visible,
+.footer-social a:hover,
+.footer-social a:focus-visible {
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px rgba(99, 179, 255, 0.35);
+}
+
+.contact-social svg,
+.footer-social svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-social a[href*="github.com"] svg path,
+.footer-social a[href*="github.com"] svg path {
+  fill: currentColor;
+  stroke: none;
+}
+
+.contact-social a[href*="linkedin.com"] svg rect,
+.footer-social a[href*="linkedin.com"] svg rect {
+  fill: currentColor;
+  stroke: none;
+}
+
+.contact-social a[href*="linkedin.com"] svg path,
+.footer-social a[href*="linkedin.com"] svg path {
+  stroke: #f5f7fb;
+}
+
+.contact-social .icon-fill,
+.footer-social .icon-fill {
+  fill: currentColor;
+  stroke: none;
+}
+
+.contact-social a[href*="github.com"]:hover,
+.contact-social a[href*="github.com"]:focus-visible,
+.footer-social a[href*="github.com"]:hover,
+.footer-social a[href*="github.com"]:focus-visible {
+  color: #f0f6fc;
+  background: #24292f;
+  border-color: #24292f;
+}
+
+.contact-social a[href*="linkedin.com"]:hover,
+.contact-social a[href*="linkedin.com"]:focus-visible,
+.footer-social a[href*="linkedin.com"]:hover,
+.footer-social a[href*="linkedin.com"]:focus-visible {
+  color: #fff;
+  background: #0a66c2;
+  border-color: #0a66c2;
+}
+
+.contact-social a[href*="instagram.com"]:hover,
+.contact-social a[href*="instagram.com"]:focus-visible,
+.footer-social a[href*="instagram.com"]:hover,
+.footer-social a[href*="instagram.com"]:focus-visible {
+  color: #fff;
+  border-color: #d62976;
+  background: linear-gradient(135deg, #4f5bd5, #d62976 55%, #feda75);
+}
+
 .site-footer {
   margin-top: 60px;
   padding: 28px 24px 22px;
@@ -632,6 +721,7 @@ a:hover, a:focus { color: #b4cbff; }
 
 .footer-social {
   display: flex;
+  align-items: center;
   gap: 14px;
 }
 .footer-social img {
@@ -789,4 +879,11 @@ section[id] { scroll-margin-top: 84px; }
 /* Reserve two headline lines up to 720px */
 @media (max-width: 720px) {
   .hero-text h1 { min-height: 2.4em; }
+}
+
+@media (max-width: 560px) {
+  .footer-content {
+    justify-content: center;
+    text-align: center;
+  }
 }
