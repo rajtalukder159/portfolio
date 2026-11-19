@@ -173,12 +173,22 @@ a:hover, a:focus { color: #b4cbff; }
   transform: translateY(-3px);
   transition: transform 0.25s ease;
 }
-.hero-text { flex: 1; }
+.hero-text {
+  flex: 1;
+  text-align: center;
+}
 .hero-text h1 { font-size: 2.6rem; color: #fff; margin: 0 0 12px; font-weight: 800; letter-spacing: 0.01em; }
-.subtitle { font-size: 1.08rem; color: var(--muted); margin: 0 0 22px; line-height: 1.6; max-width: 700px; }
+.subtitle {
+  max-width: 700px;
+  margin: 0 auto 22px;
+  font-size: 1.08rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
 
 .hero-actions {
   display: flex;
+  justify-content: center;
   gap: 14px;
   margin-bottom: 18px;
   flex-wrap: wrap;
@@ -216,20 +226,53 @@ a:hover, a:focus { color: #b4cbff; }
 .hero-social {
   margin-top: 6px;
   display: flex;
+  justify-content: center;
   gap: 16px;
 }
-/* Restore glow + hover animation for social icons */
-.hero-social img {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
-  filter: grayscale(1) brightness(1.8);
-  transition: filter 0.18s ease, transform 0.18s ease;
+
+.hero-social a {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  color: #8b929e;
+  transition: color 0.18s ease, transform 0.18s ease, filter 0.18s ease;
 }
 
-.hero-social a:hover img {
-  filter: grayscale(0) brightness(2.2) drop-shadow(0 0 10px rgba(99,179,255,0.75));
+.hero-social svg {
+  width: 34px;
+  height: 34px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hero-social a[href*="github.com"] svg path {
+  fill: currentColor;
+  stroke: none;
+}
+
+.hero-social a[href*="linkedin.com"] svg rect {
+  fill: currentColor;
+  stroke: none;
+}
+
+.hero-social a[href*="linkedin.com"] svg path {
+  stroke: #f5f7fb;
+}
+
+.hero-social .icon-fill {
+  fill: currentColor;
+  stroke: none;
+}
+
+.hero-social a:hover,
+.hero-social a:focus-visible {
+  color: #c8ced8;
   transform: translateY(-2px) scale(1.06);
+  filter: drop-shadow(0 0 8px rgba(99,179,255,0.55));
 }
 .section {
   max-width: var(--max);
