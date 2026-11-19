@@ -227,53 +227,20 @@ a:hover, a:focus { color: #b4cbff; }
 .hero-social {
   margin-top: 6px;
   display: flex;
-  justify-content: center;
   gap: 16px;
 }
-
-.hero-social a {
-  display: grid;
-  place-items: center;
-  width: 38px;
-  height: 38px;
-  color: #8b929e;
-  transition: color 0.18s ease, transform 0.18s ease, filter 0.18s ease;
+/* Restore glow + hover animation for social icons */
+.hero-social img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  filter: grayscale(1) brightness(1.8);
+  transition: filter 0.18s ease, transform 0.18s ease;
 }
 
-.hero-social svg {
-  width: 34px;
-  height: 34px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.hero-social a[href*="github.com"] svg path {
-  fill: currentColor;
-  stroke: none;
-}
-
-.hero-social a[href*="linkedin.com"] svg rect {
-  fill: currentColor;
-  stroke: none;
-}
-
-.hero-social a[href*="linkedin.com"] svg path {
-  stroke: #f5f7fb;
-}
-
-.hero-social .icon-fill {
-  fill: currentColor;
-  stroke: none;
-}
-
-.hero-social a:hover,
-.hero-social a:focus-visible {
-  color: #c8ced8;
+.hero-social a:hover img {
+  filter: grayscale(0) brightness(2.2) drop-shadow(0 0 10px rgba(99,179,255,0.75));
   transform: translateY(-2px) scale(1.06);
-  filter: drop-shadow(0 0 8px rgba(99,179,255,0.55));
 }
 .section {
   max-width: var(--max);
@@ -640,95 +607,6 @@ a:hover, a:focus { color: #b4cbff; }
 .contact-info h3 { margin-top: 0; color: #c6d6ff; }
 .contact-info p { margin: 8px 0; color: var(--text); }
 
-.contact-social {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-}
-
-.contact-social a,
-.footer-social a {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  color: var(--accent);
-  border: 1px solid rgba(99, 179, 255, 0.28);
-  border-radius: 50%;
-  background: rgba(15, 22, 41, 0.45);
-  transition: transform 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
-}
-
-.contact-social a:hover,
-.contact-social a:focus-visible,
-.footer-social a:hover,
-.footer-social a:focus-visible {
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 0 18px rgba(99, 179, 255, 0.35);
-}
-
-.contact-social svg,
-.footer-social svg {
-  width: 24px;
-  height: 24px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.contact-social a[href*="github.com"] svg path,
-.footer-social a[href*="github.com"] svg path {
-  fill: currentColor;
-  stroke: none;
-}
-
-.contact-social a[href*="linkedin.com"] svg rect,
-.footer-social a[href*="linkedin.com"] svg rect {
-  fill: currentColor;
-  stroke: none;
-}
-
-.contact-social a[href*="linkedin.com"] svg path,
-.footer-social a[href*="linkedin.com"] svg path {
-  stroke: #f5f7fb;
-}
-
-.contact-social .icon-fill,
-.footer-social .icon-fill {
-  fill: currentColor;
-  stroke: none;
-}
-
-.contact-social a[href*="github.com"]:hover,
-.contact-social a[href*="github.com"]:focus-visible,
-.footer-social a[href*="github.com"]:hover,
-.footer-social a[href*="github.com"]:focus-visible {
-  color: #f0f6fc;
-  background: #24292f;
-  border-color: #24292f;
-}
-
-.contact-social a[href*="linkedin.com"]:hover,
-.contact-social a[href*="linkedin.com"]:focus-visible,
-.footer-social a[href*="linkedin.com"]:hover,
-.footer-social a[href*="linkedin.com"]:focus-visible {
-  color: #fff;
-  background: #0a66c2;
-  border-color: #0a66c2;
-}
-
-.contact-social a[href*="instagram.com"]:hover,
-.contact-social a[href*="instagram.com"]:focus-visible,
-.footer-social a[href*="instagram.com"]:hover,
-.footer-social a[href*="instagram.com"]:focus-visible {
-  color: #fff;
-  border-color: #d62976;
-  background: linear-gradient(135deg, #4f5bd5, #d62976 55%, #feda75);
-}
-
 .site-footer {
   margin-top: 60px;
   padding: 28px 24px 22px;
@@ -756,6 +634,17 @@ a:hover, a:focus { color: #b4cbff; }
   display: flex;
   gap: 14px;
 }
+.footer-social img {
+  width: 26px;
+  height: 26px;
+  filter: grayscale(1) brightness(1.7);
+  transition: filter 0.18s ease, transform 0.18s ease;
+}
+.footer-social a:hover img {
+  filter: grayscale(0) brightness(2.2) drop-shadow(0 0 7px rgba(99,179,255,0.55));
+  transform: translateY(-2px);
+}
+
 
 /* Animations */
 .fade-item,
