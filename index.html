@@ -477,6 +477,51 @@
             >
           </div>
         </div>
+
+        <div class="recommendations-wrap">
+          <h3 class="recommendations-heading scroll-card animate-on-scroll">
+            Recommendations
+          </h3>
+          <div class="recommendation-marquee">
+            <div class="recommendation-track">
+              <article class="recommendation-card">
+                <div class="recommendation-person">
+                  <div class="recommendation-avatar" aria-hidden="true">SS</div>
+                  <div>
+                    <h4>Shahriar Hossain Shagor</h4>
+                    <p>Gold Awardee: OCWC (RCS UK) · Awarded Judge: GCWC Royal Commonwealth Society, UK · Mentor</p>
+                    <time datetime="2026-08-06">6 August 2026</time>
+                  </div>
+                </div>
+                <div class="recommendation-stars" aria-label="5 out of 5 stars">
+                  ★ ★ ★ ★ ★
+                </div>
+                <blockquote>
+                  “He is a great fellow. I got the privilege to take workshop one of their organisation, and the among the audience. He was actively participated all the discussions effectively. Wish him a very good future.”
+                </blockquote>
+              </article>
+
+              <article class="recommendation-card">
+                <div class="recommendation-person">
+                  <div class="recommendation-avatar" aria-hidden="true">SM</div>
+                  <div>
+                    <h4>Safwan Muntasir</h4>
+                    <p>Cyber Security Professional · Trainer · Researcher · Cyber Fusion Center · Detection and Response · NG-SIEM · SOAR · DLP · EDR · XDR · NDR · Insider Threat Management · IAM · Telco</p>
+                    <time datetime="2026-04-14">14 April 2026</time>
+                  </div>
+                </div>
+                <div class="recommendation-stars" aria-label="5 out of 5 stars">
+                  ★ ★ ★ ★ ★
+                </div>
+                <blockquote>
+                  “Shimon Talukder Raj was one of my students in Ostad Cybersecurity Batch 06.<br /><br />
+                  What I appreciate most about Shimon is, even at his HSC level, Shimon showed strong interest in cybersecurity and worked sincerely to improve his skills.<br /><br />
+                  Shimon definitely has a good learning attitude and a positive mindset, which I believe are very important for building a career in cybersecurity. With continuous effort and dedication, he has the potential to do well in this field. He will be a self-disciplined, hardworking individual with great potential.”
+                </blockquote>
+              </article>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Off-Screen -->
@@ -878,6 +923,117 @@
             if (position >= loopWidth) position -= loopWidth;
             render();
           });
+
+        const recommendationMarquee = document.querySelector(
+          ".recommendation-marquee"
+        );
+        const recommendationTrack = document.querySelector(
+          ".recommendation-track"
+        );
+        if (recommendationMarquee && recommendationTrack) {
+          const recommendationCards = Array.from(
+            recommendationTrack.querySelectorAll(".recommendation-card")
+          );
+          recommendationTrack.innerHTML = "";
+
+          const recommendationGroup1 = document.createElement("div");
+          recommendationGroup1.className = "recommendation-group";
+          recommendationCards.forEach((card) =>
+            recommendationGroup1.appendChild(card)
+          );
+
+          const recommendationGroup2 = recommendationGroup1.cloneNode(true);
+          recommendationGroup2.setAttribute("aria-hidden", "true");
+          recommendationTrack.append(
+            recommendationGroup1,
+            recommendationGroup2
+          );
+
+          const recommendationControls = document.createElement("div");
+          recommendationControls.className = "recommendation-controls";
+          recommendationControls.innerHTML = `
+            <button type="button" class="recommendation-prev" aria-label="Previous recommendation">←</button>
+            <button type="button" class="recommendation-next" aria-label="Next recommendation">→</button>
+          `;
+          recommendationMarquee.appendChild(recommendationControls);
+
+          const recommendationSpeed = 18;
+          let recommendationPosition = 0;
+          let recommendationLoopWidth = 0;
+          let recommendationStep = 538;
+          let recommendationPaused = reduceMotion;
+          let recommendationLast = performance.now();
+
+          const renderRecommendations = () =>
+            (recommendationTrack.style.transform =
+              `translate3d(${-recommendationPosition}px,0,0)`);
+
+          function calculateRecommendations() {
+            recommendationLoopWidth =
+              recommendationGroup2.offsetLeft -
+              recommendationGroup1.offsetLeft;
+            const cards =
+              recommendationGroup1.querySelectorAll(".recommendation-card");
+            if (cards.length > 1) {
+              recommendationStep =
+                cards[1].offsetLeft - cards[0].offsetLeft;
+            }
+            if (recommendationLoopWidth > 0) {
+              recommendationPosition %= recommendationLoopWidth;
+            }
+            renderRecommendations();
+          }
+
+          calculateRecommendations();
+          window.addEventListener("resize", calculateRecommendations);
+
+          function moveRecommendations(now) {
+            const dt = Math.min(now - recommendationLast, 50);
+            recommendationLast = now;
+            if (!recommendationPaused && recommendationLoopWidth > 0) {
+              recommendationPosition +=
+                (recommendationSpeed * dt) / 1000;
+              if (recommendationPosition >= recommendationLoopWidth) {
+                recommendationPosition -= recommendationLoopWidth;
+              }
+              renderRecommendations();
+            }
+            requestAnimationFrame(moveRecommendations);
+          }
+          requestAnimationFrame(moveRecommendations);
+
+          recommendationMarquee.addEventListener("mouseenter", () => {
+            recommendationPaused = true;
+          });
+          recommendationMarquee.addEventListener("mouseleave", () => {
+            recommendationPaused = reduceMotion;
+          });
+          recommendationMarquee.addEventListener("focusin", () => {
+            recommendationPaused = true;
+          });
+          recommendationMarquee.addEventListener("focusout", () => {
+            recommendationPaused = reduceMotion;
+          });
+
+          recommendationControls
+            .querySelector(".recommendation-prev")
+            .addEventListener("click", () => {
+              recommendationPosition -= recommendationStep;
+              if (recommendationPosition < 0) {
+                recommendationPosition += recommendationLoopWidth;
+              }
+              renderRecommendations();
+            });
+          recommendationControls
+            .querySelector(".recommendation-next")
+            .addEventListener("click", () => {
+              recommendationPosition += recommendationStep;
+              if (recommendationPosition >= recommendationLoopWidth) {
+                recommendationPosition -= recommendationLoopWidth;
+              }
+              renderRecommendations();
+            });
+        }
       });
     </script>
   </body>
