@@ -300,7 +300,8 @@ a:hover, a:focus { color: #b4cbff; }
   display: flex;
   gap: 26px 20px;
   flex-wrap: wrap;
-  margin-bottom: 18px;
+  margin-bottom: 0;
+  align-items: stretch;
 }
 
 .about-actions { margin-top: 10px; }
@@ -573,7 +574,7 @@ a:hover, a:focus { color: #b4cbff; }
    ============================== */
 
 .offscreen-section .offscreen-card {
-  flex: 1 1 320px;
+  flex: 1 1 240px;
   background: rgba(28, 39, 70, 0.88);
   border-radius: var(--radius-md);
   padding: 18px 18px;
@@ -584,6 +585,29 @@ a:hover, a:focus { color: #b4cbff; }
 .offscreen-section .offscreen-card h3 {
   color: var(--accent);
   margin-top: 0;
+}
+
+.offscreen-section .offscreen-card p {
+  margin: 0 0 4px;
+  line-height: 1.55;
+}
+
+.chips {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chips li {
+  font-size: 0.9rem;
+  padding: 5px 11px;
+  border-radius: 999px;
+  border: 1px solid rgba(99, 179, 255, 0.35);
+  background: rgba(15, 22, 41, 0.45);
+  color: var(--text);
 }
 
 .work-cards { flex-direction: column; gap: 20px; }
