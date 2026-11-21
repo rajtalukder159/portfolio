@@ -990,3 +990,11 @@ section[id] { scroll-margin-top: 84px; }
   .subtitle { margin-left: 0; margin-right: 0; }
   .hero-actions { justify-content: flex-start; }
 }
+
+.card-link {
+  display: inline-block;
+  margin-top: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.card-link:hover { text-decoration: underline; }
