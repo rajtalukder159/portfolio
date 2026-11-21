@@ -941,3 +941,28 @@ section[id] { scroll-margin-top: 84px; }
     text-align: center;
   }
 }
+
+/* Hero: photo and text sit together as one centered group (desktop) */
+@media (min-width: 1025px) {
+  .hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 56px;
+    min-height: 0;
+  }
+  .hero-avatar {
+    position: relative;
+    left: auto;
+    top: auto;
+    flex-shrink: 0;
+  }
+  .hero-text {
+    margin: 0;
+    max-width: 640px;
+    padding-top: 0;
+    text-align: left;
+  }
+  .subtitle { margin-left: 0; margin-right: 0; }
+  .hero-actions { justify-content: flex-start; }
+}
