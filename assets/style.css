@@ -129,7 +129,7 @@ a:hover, a:focus { color: #b4cbff; }
   grid-template-columns: 190px minmax(0, 760px);
   justify-content: center;
   align-items: center;
-  column-gap: 40px;
+  column-gap: 20px;
   padding: 0 26px;
 }
 /* Hero avatar — best default: crisp circle + controlled crop */
