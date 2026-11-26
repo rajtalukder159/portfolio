@@ -291,6 +291,23 @@ a:hover, a:focus { color: #b4cbff; }
 }
 .about-copy p { color: var(--text); line-height: 1.6; }
 
+.facts {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 8px 18px;
+  margin: 0 0 18px;
+}
+
+.facts dt {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.facts dd {
+  margin: 0;
+  color: var(--text);
+}
+
 .about-actions,
 .skills-cards,
 .cert-cards,
@@ -893,6 +910,8 @@ a:hover, a:focus { color: #b4cbff; }
   .hero-text h1 { font-size: 2rem; }
   .subtitle { font-size: 0.98rem; }
   .section { padding: 22px 18px; }
+  .facts { grid-template-columns: 1fr; }
+  .facts dd { margin-bottom: 8px; }
   .about-actions, .skills-cards, .cert-cards, .work-cards, .contact-cards, .offscreen-grid { gap: 18px; }
   .cert-card { flex: 0 0 210px; }
 }
