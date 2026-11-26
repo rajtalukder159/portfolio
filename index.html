@@ -244,7 +244,18 @@
   <div class="work-cards">
     <div class="work-card fade-zoom-in-once">
       <h3>Junior Developer</h3>
-      <p><strong>Mindsync AI</strong> · 2026 – Present</p>
+      <p class="experience-employer">
+        <img
+          class="experience-logo"
+          src="assets/pictures/mindsync-ai-logo.jpg"
+          alt=""
+          width="36"
+          height="36"
+          loading="lazy"
+          decoding="async"
+        />
+        <span><strong>Mindsync AI</strong> · 2026 – Present</span>
+      </p>
       <ul>
         <li>Tested platform features and user workflows.</li>
         <li>Reported bugs, usability issues and suggestions for improvement.</li>
@@ -254,7 +265,18 @@
 
     <div class="work-card fade-zoom-in-once">
       <h3>General Member</h3>
-      <p><strong>NextGen Youth Society</strong> · 2026 – Present</p>
+      <p class="experience-employer">
+        <img
+          class="experience-logo"
+          src="assets/pictures/nextgen-youth-society-logo.jpg"
+          alt=""
+          width="36"
+          height="36"
+          loading="lazy"
+          decoding="async"
+        />
+        <span><strong>NextGen Youth Society</strong> · 2026 – Present</span>
+      </p>
       <ul>
         <li>Take part in skills development and networking sessions.</li>
         <li>Contribute to the community whenever opportunities arise.</li>
@@ -441,7 +463,7 @@
       <section id="work" class="section work-section">
         <h2 class="scroll-card animate-on-scroll">Featured Projects</h2>
         <div class="work-cards">
-          <div class="work-card fade-zoom-in-once">
+          <div class="work-card fade-zoom-in-once work-card--preview">
             <h3>CyberSecurity Project</h3>
             <ul>
               <li style="margin-bottom: 10px">
@@ -458,6 +480,15 @@
                 LazyS3, VirusTotal, Detect It Easy (DIE), Wireshark, OpenVAS, Nessus
               </li>
             </ul>
+            <img
+              class="project-preview"
+              src="assets/pictures/cybersecurity-projects-cover.png"
+              alt="CyberSecurity Projects cover highlighting 13 hands-on labs and reports"
+              width="1200"
+              height="627"
+              loading="lazy"
+              decoding="async"
+            />
             <a
               class="view-projects"
               href="https://github.com/rajtalukder159/CyberSecurity-Project"
@@ -467,7 +498,7 @@
             >
           </div>
 
-          <div class="work-card fade-zoom-in-once">
+          <div class="work-card fade-zoom-in-once work-card--preview">
             <h3>Docker-based Debian Lab Projects</h3>
             <ul>
               <li style="margin-bottom: 10px">
@@ -482,6 +513,15 @@
                 assessment report
               </li>
             </ul>
+            <img
+              class="project-preview"
+              src="assets/pictures/docker-debian-lab-cover.png"
+              alt="Docker Debian Web Server Security Assessment lab cover"
+              width="1200"
+              height="627"
+              loading="lazy"
+              decoding="async"
+            />
             <a
               class="view-projects"
               href="https://github.com/rajtalukder159/docker-debian-lab"
@@ -491,7 +531,7 @@
             >
           </div>
 
-          <div class="work-card fade-zoom-in-once">
+          <div class="work-card fade-zoom-in-once work-card--preview">
             <h3>DSA-Practice-GeeksforGeeks</h3>
             <ul>
               <li style="margin-bottom: 7px">
@@ -501,6 +541,15 @@
               </li>
               <li>Tech Stack: Python, C, JavaScript</li>
             </ul>
+            <img
+              class="project-preview"
+              src="assets/pictures/dsa-practice-cover.png"
+              alt="DSA Practice cover showing a binary tree and supported programming languages"
+              width="1280"
+              height="640"
+              loading="lazy"
+              decoding="async"
+            />
             <a
               class="view-projects"
               href="https://github.com/rajtalukder159/DSA-Practice-GeeksforGeeks"
@@ -519,7 +568,11 @@
         <div class="recommendation-grid">
           <article class="recommendation-card">
             <div class="recommendation-person">
-              <div class="recommendation-avatar" aria-hidden="true">SS</div>
+              <img
+                class="recommendation-avatar"
+                src="assets/pictures/recommendation-shahriar-hossain-shagor.jpg"
+                alt="Portrait of Shahriar Hossain Shagor"
+              />
               <div>
                 <h4>Shahriar Hossain Shagor</h4>
                 <p>Founder &amp; CEO: NextGen Doctors · Gold Awardee: QCWC (RCS, UK) · Awarded Judge: QCWC (Royal Commonwealth Society, UK) · Awarded: Ultra Endurance Athlete</p>
@@ -534,7 +587,11 @@
 
           <article class="recommendation-card">
             <div class="recommendation-person">
-              <div class="recommendation-avatar" aria-hidden="true">SM</div>
+              <img
+                class="recommendation-avatar"
+                src="assets/pictures/recommendation-safwan-muntasir.jpg"
+                alt="Portrait of Safwan Muntasir"
+              />
               <div>
                 <h4>Safwan Muntasir</h4>
                 <p>Cyber Security Professional · Trainer · Researcher · Cyber Fusion Center · Detection and Response</p>
@@ -938,6 +995,30 @@
           });
 
       });
+    </script>
+    <script>
+      (() => {
+        const pointerQuery = window.matchMedia(
+          "(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)"
+        );
+        if (!pointerQuery.matches) return;
+
+        const root = document.documentElement;
+        const updateCursorGlow = (event) => {
+          if (event.pointerType !== "mouse") return;
+          root.style.setProperty("--cursor-x", `${event.clientX}px`);
+          root.style.setProperty("--cursor-y", `${event.clientY}px`);
+          root.classList.add("cursor-glow-visible");
+        };
+        const hideCursorGlow = () =>
+          root.classList.remove("cursor-glow-visible");
+
+        window.addEventListener("pointermove", updateCursorGlow, {
+          passive: true,
+        });
+        window.addEventListener("pointerleave", hideCursorGlow);
+        window.addEventListener("blur", hideCursorGlow);
+      })();
     </script>
   </body>
 </html>
